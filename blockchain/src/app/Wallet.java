@@ -1,10 +1,7 @@
 package app;
 
 import java.security.*;
-import java.security.spec.ECGenParameterSpec;
-import java.security.NoSuchProviderException;
 import java.security.NoSuchAlgorithmException;
-import java.security.InvalidAlgorithmParameterException;
 
 
 public class Wallet
@@ -20,8 +17,8 @@ public class Wallet
     public void generateKeyPair()
     {
         try {
-            KeyPairGenerator keyGen = KeyPairGenerator.getInstance("EC");
-            SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+			KeyPairGenerator keyGen = KeyPairGenerator.getInstance("EC");
+			SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
             
 			keyGen.initialize(256, random);
             KeyPair keyPair = keyGen.generateKeyPair();
